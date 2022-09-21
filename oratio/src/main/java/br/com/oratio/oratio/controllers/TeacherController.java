@@ -56,4 +56,11 @@ public class TeacherController {
         repository.deleteById(id);
     }
 
+    @ResponseBody
+    @Transactional
+    @RequestMapping(path = "/teacher/{id}", method = RequestMethod.GET)
+    public Teacher getTeacherById(@PathVariable Long id) {
+        return repository.findById(id).get();
+    }
+
 }

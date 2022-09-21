@@ -13,52 +13,47 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.oratio.oratio.database.entities.Student;
-import br.com.oratio.oratio.domain.repository.StudentRepository;
+import br.com.oratio.oratio.database.entities.ExaminationBoard;
+import br.com.oratio.oratio.domain.repository.ExaminationBoardRepository;
+
 
 @RestController
-public class StudentController {
+public class ExaminationBoardController {
     
     @Autowired
-    private StudentRepository repository;
+    private ExaminationBoardRepository repository;
 
-    @GetMapping("/student/test")
+    @GetMapping("/examination_board/test")
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
         return String.format("Hello %s!", name);
     }
 
     @ResponseBody
-    @RequestMapping("/student/all")
-    public List<Student> getStudents() {
+    @RequestMapping(value = "/examination_board/all", method = RequestMethod.GET)
+    public List<ExaminationBoard> getAll() {
         return repository.findAll();
     }
 
     @ResponseBody
     @Transactional
-    @RequestMapping(path = "/student/create", method = RequestMethod.POST)
-    public void addStudent(@RequestBody Student student) {
-        repository.save(student);
+    @RequestMapping(value = "/examination_board/create", method = RequestMethod.POST)
+    public void addExaminationBoard(@RequestBody ExaminationBoard examinationBoard) {
+        repository.save(examinationBoard);
     }
 
     @ResponseBody
-    @Transactional
-    @RequestMapping(path = "/student/edit", method = RequestMethod.PUT)
-    public void editStudent(@RequestBody Student student) {
-        repository.save(student);
+    @RequestMapping(path = "/examination_board/edit", method = RequestMethod.PUT)
+    public void editExaminationBoard(@RequestBody ExaminationBoard examinationBoard) {
+        repository.save(examinationBoard);
     }
 
     @ResponseBody
-    @Transactional
-    @RequestMapping(path = "/student/delete/{id}", method = RequestMethod.DELETE)
-    public void deleteStudent(@PathVariable  Long id) {
+    @RequestMapping(path = "/examination_board/delete/{id}", method = RequestMethod.DELETE)
+    public void deleteExaminationBoard(@PathVariable Long id) {
         repository.deleteById(id);
     }
 
-    @ResponseBody
-    @Transactional
-    @RequestMapping(path = "/student/{id}", method = RequestMethod.GET)
-    public Student getStudentById(@PathVariable Long id) {
-        return repository.findById(id).get();
-    }
-
+    
+  
+    
 }
