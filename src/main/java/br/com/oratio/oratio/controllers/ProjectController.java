@@ -19,7 +19,7 @@ import br.com.oratio.oratio.domain.repository.ProjectRepository;
 import br.com.oratio.oratio.domain.repository.StudentRepository;
 import br.com.oratio.oratio.domain.repository.TeacherRepository;
 
-@CrossOrigin
+@CrossOrigin(maxAge = 3600)
 @RestController
 public class ProjectController {
     @Autowired

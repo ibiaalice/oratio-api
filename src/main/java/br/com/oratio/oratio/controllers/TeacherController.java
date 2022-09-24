@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.oratio.oratio.database.entities.Teacher;
 import br.com.oratio.oratio.domain.repository.TeacherRepository;
 
-@CrossOrigin
+@CrossOrigin(maxAge = 3600)
 @RestController
 public class TeacherController {
 

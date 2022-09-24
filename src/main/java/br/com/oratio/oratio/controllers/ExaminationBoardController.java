@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.oratio.oratio.database.entities.ExaminationBoard;
 import br.com.oratio.oratio.domain.repository.ExaminationBoardRepository;
 
-@CrossOrigin
+@CrossOrigin(maxAge = 3600)
 @RestController
 public class ExaminationBoardController {
     
