@@ -19,6 +19,7 @@ import br.com.oratio.oratio.domain.repository.ProjectRepository;
 import br.com.oratio.oratio.domain.repository.StudentRepository;
 import br.com.oratio.oratio.domain.repository.TeacherRepository;
 
+@CrossOrigin
 @RestController
 public class ProjectController {
     @Autowired

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.oratio.oratio.database.entities.ExaminationBoard;
 import br.com.oratio.oratio.domain.repository.ExaminationBoardRepository;
 
-
+@CrossOrigin
 @RestController
 public class ExaminationBoardController {
     

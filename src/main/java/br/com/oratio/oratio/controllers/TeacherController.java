@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.oratio.oratio.database.entities.Teacher;
 import br.com.oratio.oratio.domain.repository.TeacherRepository;
 
+@CrossOrigin
 @RestController
 public class TeacherController {
 
@@ -30,7 +31,6 @@ public class TeacherController {
     }
 
     @ResponseBody
-    @CrossOrigin(origins = "http://localhost:8080")
     @RequestMapping("/teacher/all")
     public List<Teacher> getTeachers() {
          return repository.findAll();

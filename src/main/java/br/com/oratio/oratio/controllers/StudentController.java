@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.oratio.oratio.database.entities.Student;
 import br.com.oratio.oratio.domain.repository.StudentRepository;
 
+@CrossOrigin
 @RestController
 public class StudentController {
     
