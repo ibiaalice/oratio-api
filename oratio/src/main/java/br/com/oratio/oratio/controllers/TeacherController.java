@@ -5,6 +5,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,6 +30,7 @@ public class TeacherController {
     }
 
     @ResponseBody
+    @CrossOrigin(origins = "http://localhost:8080")
     @RequestMapping("/teacher/all")
     public List<Teacher> getTeachers() {
          return repository.findAll();
