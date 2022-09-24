@@ -14,7 +14,7 @@
 	<name>Oratio</name>
 	<description>API services to assist in the evaluation process of course completion projects.</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>15</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
