@@ -25,6 +25,8 @@ public class Project {
     private String status;
     private Long studentId;
     private Long teacherId;
+    private Long evaluatorId;
+    private Long evaluatorId2;
     private boolean isFinalized;
     private boolean isAvailable;
 }
