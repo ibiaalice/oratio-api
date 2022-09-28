@@ -78,7 +78,11 @@ public class ProjectController {
         projectRepository.deleteById(id);
     }
 
+    @ResponseBody
+    @Transactional
+    @RequestMapping(path = "/project/semester/{semester}", method = RequestMethod.GET)
+    public List<Project> getProjectsBySemester(@PathVariable String semester) {
+        return projectRepository.findBySemesterOrderByTitle(semester);
+    }
     
-
-
 }

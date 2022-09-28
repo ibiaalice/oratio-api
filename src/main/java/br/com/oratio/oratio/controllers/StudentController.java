@@ -63,4 +63,11 @@ public class StudentController {
         return repository.findById(id).get();
     }
 
+    @ResponseBody
+    @Transactional
+    @RequestMapping(path = "/student/semester/{semester}", method = RequestMethod.GET)
+    public List<Student> getStudentsBySemester(@PathVariable String semester) {
+        return repository.findBySemesterOrderByName(semester);
+    }
+
 }

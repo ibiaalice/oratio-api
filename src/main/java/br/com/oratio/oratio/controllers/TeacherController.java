@@ -65,4 +65,11 @@ public class TeacherController {
         return repository.findById(id).get();
     }
 
+    @ResponseBody
+    @Transactional
+    @RequestMapping(path = "/teacher/ordered", method = RequestMethod.GET)
+    public List<Teacher> getTeachersOrdered() {
+        return repository.OrderByName();
+    }
+
 }
