@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.oratio.oratio.database.entities.Teacher;
 import br.com.oratio.oratio.domain.repository.TeacherRepository;
 
+@CrossOrigin(maxAge = 3600)
 @RestController
 public class TeacherController {
 
@@ -30,7 +31,6 @@ public class TeacherController {
     }
 
     @ResponseBody
-    @CrossOrigin(origins = "http://localhost:8080")
     @RequestMapping("/teacher/all")
     public List<Teacher> getTeachers() {
          return repository.findAll();
@@ -63,6 +63,13 @@ public class TeacherController {
     @RequestMapping(path = "/teacher/{id}", method = RequestMethod.GET)
     public Teacher getTeacherById(@PathVariable Long id) {
         return repository.findById(id).get();
+    }
+
+    @ResponseBody
+    @Transactional
+    @RequestMapping(path = "/teacher/ordered", method = RequestMethod.GET)
+    public List<Teacher> getTeachersOrdered() {
+        return repository.OrderByName();
     }
 
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +20,7 @@ import br.com.oratio.oratio.domain.repository.ProjectRepository;
 import br.com.oratio.oratio.domain.repository.StudentRepository;
 import br.com.oratio.oratio.domain.repository.TeacherRepository;
 
+@CrossOrigin(maxAge = 3600)
 @RestController
 public class ProjectController {
     @Autowired
@@ -76,7 +78,11 @@ public class ProjectController {
         projectRepository.deleteById(id);
     }
 
+    @ResponseBody
+    @Transactional
+    @RequestMapping(path = "/project/semester/{semester}", method = RequestMethod.GET)
+    public List<Project> getProjectsBySemester(@PathVariable String semester) {
+        return projectRepository.findBySemesterOrderByTitle(semester);
+    }
     
-
-
 }
