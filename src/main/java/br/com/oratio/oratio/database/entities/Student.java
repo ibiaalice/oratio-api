@@ -25,7 +25,7 @@ public class Student {
     private String email;
     private String password;
     private String registrationCourseNumber;
-    private String semester; 
+    private Long semester;
     private long supervisorId;
     private long projectId;
     private boolean isFinished;

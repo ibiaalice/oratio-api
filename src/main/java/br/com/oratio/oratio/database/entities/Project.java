@@ -25,7 +25,7 @@ public class Project {
     private String description;
     private String link;
     private String status;
-    private String semester;
+    private Long semester;
     private Long studentId;
     private Long teacherId;
     private Long evaluatorId;

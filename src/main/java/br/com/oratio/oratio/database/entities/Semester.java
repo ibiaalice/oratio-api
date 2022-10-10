@@ -23,7 +23,6 @@ public class Semester {
     @Id
     @GeneratedValue
     private Long id;
-
     String year;
     String semester;
     String start;
