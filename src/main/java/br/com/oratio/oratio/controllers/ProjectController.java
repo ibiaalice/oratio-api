@@ -81,7 +81,7 @@ public class ProjectController {
     @ResponseBody
     @Transactional
     @RequestMapping(path = "/project/semester/{semester}", method = RequestMethod.GET)
-    public List<Project> getProjectsBySemester(@PathVariable String semester) {
+    public List<Project> getProjectsBySemester(@PathVariable Long semester) {
         return projectRepository.findBySemesterOrderByTitle(semester);
     }
     

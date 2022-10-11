@@ -10,9 +10,9 @@ import br.com.oratio.oratio.database.entities.Student;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
-    List<Student> findBySemester(String semester);
+    List<Student> findBySemester(Long semester);
 
-    List<Student> findBySemesterOrderByName(String semester);
+    List<Student> findBySemesterOrderByName(Long semester);
 
 }
 
