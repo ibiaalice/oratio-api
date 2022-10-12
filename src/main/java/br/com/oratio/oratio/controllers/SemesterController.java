@@ -32,7 +32,7 @@ public class SemesterController {
 
     @GetMapping("/semester/all")
     public List<Semester> getAll() {
-        return semesterRepository.findAll();
+        return semesterRepository.OrderByYear();
     }
 
     @ResponseBody
@@ -63,4 +63,9 @@ public class SemesterController {
         semesterRepository.save(semester);
     }
     
+    @Transactional
+    @RequestMapping(path = "/semester/all", method = RequestMethod.DELETE)
+    void deleteAll() {
+        semesterRepository.deleteAll();
+    }
 }
