@@ -70,4 +70,10 @@ public class StudentController {
         return repository.findBySemesterOrderByName(semester);
     }
 
+    @Transactional
+    @RequestMapping(path = "/student/all", method = RequestMethod.DELETE)
+    public void deleteAll(){
+        repository.deleteAll();
+    }
+
 }

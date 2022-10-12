@@ -63,4 +63,9 @@ public class SemesterController {
         semesterRepository.save(semester);
     }
     
+    @Transactional
+    @RequestMapping(path = "/semester/all", method = RequestMethod.DELETE)
+    void deleteAll() {
+        semesterRepository.deleteAll();
+    }
 }

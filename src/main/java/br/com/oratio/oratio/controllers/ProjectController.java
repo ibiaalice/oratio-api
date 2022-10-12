@@ -84,5 +84,11 @@ public class ProjectController {
     public List<Project> getProjectsBySemester(@PathVariable Long semester) {
         return projectRepository.findBySemesterOrderByTitle(semester);
     }
+
+    @Transactional
+    @RequestMapping(path ="/project/all", method = RequestMethod.DELETE)
+    public void deleteAll(){
+        projectRepository.deleteAll();
+    }
     
 }
