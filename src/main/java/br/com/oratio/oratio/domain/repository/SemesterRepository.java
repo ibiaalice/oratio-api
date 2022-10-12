@@ -11,4 +11,6 @@ public interface SemesterRepository extends JpaRepository<Semester, Long> {
 
     List<Semester> findByYear(String year);
 
+    List<Semester> OrderByYear();
+
 }

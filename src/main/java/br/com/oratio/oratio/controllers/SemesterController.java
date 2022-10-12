@@ -32,7 +32,7 @@ public class SemesterController {
 
     @GetMapping("/semester/all")
     public List<Semester> getAll() {
-        return semesterRepository.findAll();
+        return semesterRepository.OrderByYear();
     }
 
     @ResponseBody
