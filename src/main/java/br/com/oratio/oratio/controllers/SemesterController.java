@@ -44,6 +44,13 @@ public class SemesterController {
 
     @ResponseBody
     @Transactional
+    @RequestMapping(path = "/semester/active", method = RequestMethod.GET)
+    public Semester getSemesterActive() {
+        return semesterRepository.getByActiveStatus();
+    }
+
+    @ResponseBody
+    @Transactional
     @RequestMapping(path = "/semester/{year}", method = RequestMethod.GET)
     public List<Semester> getSemesterByYear(@PathVariable String year) {
         return semesterRepository.findByYear(year);
