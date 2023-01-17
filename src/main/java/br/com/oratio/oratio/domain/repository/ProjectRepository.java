@@ -11,5 +11,7 @@ import br.com.oratio.oratio.database.entities.Project;
 public interface ProjectRepository extends JpaRepository<Project, Long> {
 
     List<Project> findBySemesterOrderByTitle(Long semester);
+
+    Project findByStudentId(Long studentId);
     
 }
