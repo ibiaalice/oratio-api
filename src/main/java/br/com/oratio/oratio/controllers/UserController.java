@@ -33,7 +33,7 @@ public class UserController {
     }
 
     @ResponseBody
-    @RequestMapping( path = "/user/login", method = RequestMethod.GET)
+    @RequestMapping( path = "/user/login", method = RequestMethod.POST)
     public ResponseEntity<String> login(@RequestBody User user) {
     User userEmail = userRepository.findByEmail(user.getEmail());
 
