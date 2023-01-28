@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.oratio.oratio.database.entities.Project;
 import br.com.oratio.oratio.domain.repository.ProjectRepository;
 import br.com.oratio.oratio.domain.repository.StudentRepository;
-import br.com.oratio.oratio.domain.repository.TeacherRepository;
+import br.com.oratio.oratio.domain.repository.UserRepository;
 
 @CrossOrigin(maxAge = 3600)
 @RestController
@@ -30,7 +30,7 @@ public class ProjectController {
     private StudentRepository studentRepository;
 
     @Autowired
-    private TeacherRepository teacherRepository;
+    private UserRepository teacherRepository;
 
     @GetMapping("/project/test")
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
